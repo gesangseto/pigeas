@@ -7,7 +7,7 @@
 						<h1 class="text-white">
 							Services
 						</h1>
-						<p class="text-white link-nav"><a href="index.html">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="services.html"> Services</a></p>
+						<p class="text-white link-nav"><a href="<?= site_url('Home') ?>">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="services.html"> Services</a></p>
 					</div>
 				</div>
 			</div>

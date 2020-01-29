@@ -11,4 +11,7 @@ $route['Service'] = 'Compro/Home/Service';
 $route['Contact'] = 'Compro/Home/Contact';
 
 // Admin Area
-$route['Area-Admin'] = 'Compro/Home/Index';
+$route['Area-Admin'] = 'Login';
+$route['Area-Admin/Logout'] = 'Logout';
+$route['Login'] = '404';
+$route['Logout'] = '404';
