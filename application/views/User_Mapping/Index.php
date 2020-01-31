@@ -8,7 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <!-- SWAL Fire -->
-<script src="https://unpkg.com/sweetalert/asset_app/sweetalert.min.js"></script>
+<script src="<?= base_url('asset_app/sweetalert/sweetalert.min.js') ?>"></script>
 <!-- Body Here -->
 <div class="col-xs-12 col-sm-9 content">
     <div class="panel panel-default">
@@ -136,7 +136,7 @@
                                                         echo '<a onclick="hapus_access(' . $row_access['id'] . ')" class="btn btn-danger"><i class="fa fa-trash"></i></a>';
                                                         echo '<a data-toggle="modal" data-target="#access_' . $row_access['id'] . '" class="btn btn-warning"><i class="fa fa-pencil"></i></a>';
                                                         if ($count != 0) {
-                                                            echo '<a href="' . site_url('User_mapping/Read') . '?id=' . $row_access['id'] . '" class="btn btn-success"><i class="fa fa-search"></i></a>';
+                                                            echo '<a href="' . site_url('User_Mapping/Read') . '?id=' . $row_access['id'] . '" class="btn btn-success"><i class="fa fa-search"></i></a>';
                                                         }
                                                         echo '</td>';
                                                         echo '</tr>';
@@ -170,7 +170,7 @@ foreach ($parent_map as $row_parent) { ?>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?= site_url('User_mapping/Update') ?>" method="POST">
+                    <form action="<?= site_url('User_Mapping/Update') ?>" method="POST">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group has-warning has-feedback">
@@ -219,7 +219,7 @@ foreach ($access_map as $row_access) { ?>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?= site_url('User_mapping/Update') ?>" method="POST">
+                    <form action="<?= site_url('User_Mapping/Update') ?>" method="POST">
                         <div class="row">
                             <div class="col-md-12">
                                 <input type="hidden" class="form-control" required name="id" value="<?= $row_access['id'] ?>" placeholder="email" autocomplete="off" />
@@ -263,7 +263,7 @@ foreach ($access_map as $row_access) { ?>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form action="<?= site_url('User_mapping/Create') ?>" method="POST">
+                <form action="<?= site_url('User_Mapping/Create') ?>" method="POST">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -303,7 +303,7 @@ foreach ($access_map as $row_access) { ?>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form action="<?= site_url('User_mapping/Create') ?>" method="POST">
+                <form action="<?= site_url('User_Mapping/Create') ?>" method="POST">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -367,7 +367,7 @@ foreach ($access_map as $row_access) { ?>
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location.href = "<?= site_url('User_mapping/Delete?parent_map_id='); ?>" + uid;
+                    window.location.href = "<?= site_url('User_Mapping/Delete?parent_map_id='); ?>" + uid;
                 } else {
                     swal("Map is safe!");
                 }
@@ -384,7 +384,7 @@ foreach ($access_map as $row_access) { ?>
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location.href = "<?= site_url('User_mapping/Delete?access_map_id='); ?>" + id;
+                    window.location.href = "<?= site_url('User_Mapping/Delete?access_map_id='); ?>" + id;
                 } else {
                     swal("Map is safe!");
                 }

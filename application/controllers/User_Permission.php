@@ -59,7 +59,7 @@ class User_Permission extends CI_Controller
             $dataRs = $this->_User_Permission->_create_permission($data);
         }
         $dataRs['user_info'] = $this->_User_Permission->_view_user($user_id);
-        $dataRs['user_permission'] = $this->_User_Permission->_view_user_permission($user_id);
+        $dataRs['User_Permission'] = $this->_User_Permission->_view_user_permission($user_id);
         $dataRs['access_map'] = $this->_User_Permission->_view_access_map();
         $dataRs['parent_map'] = $this->_User_Permission->_view_parent_map();
         $this->load->view('User_Permission/Read', $dataRs);
@@ -69,7 +69,7 @@ class User_Permission extends CI_Controller
     {
         $id = $this->input->get('id', TRUE);
         $data['user_info'] = $this->_User_Permission->_view_user($id);
-        $data['user_permission'] = $this->_User_Permission->_view_user_permission($id);
+        $data['User_Permission'] = $this->_User_Permission->_view_user_permission($id);
         $data['access_map'] = $this->_User_Permission->_view_access_map();
         $data['parent_map'] = $this->_User_Permission->_view_parent_map();
         $this->load->view('User_Permission/Read', $data);
@@ -107,7 +107,7 @@ class User_Permission extends CI_Controller
         );
         $dataRs = $this->_User_Permission->_update_role($role_id, $data);
         $dataRs['user_info'] = $this->_User_Permission->_view_user($user_id);
-        $dataRs['user_permission'] = $this->_User_Permission->_view_user_permission($user_id);
+        $dataRs['User_Permission'] = $this->_User_Permission->_view_user_permission($user_id);
         $data['access_map'] = $this->_User_Permission->_view_access_map();
         $data['parent_map'] = $this->_User_Permission->_view_parent_map();
         $this->load->view('User_Permission/Read', $dataRs);
@@ -118,13 +118,13 @@ class User_Permission extends CI_Controller
     {
         $role_id = $_GET['role_id'];
         $user_id = $_GET['user_id'];
-        $this->db->delete('user_permission', array('id' => $role_id));
+        $this->db->delete('User_Permission', array('id' => $role_id));
         $dataRs = array(
             'status' => '1',
             'message' => 'delete success'
         );
         $dataRs['user_info'] = $this->_User_Permission->_view_user($user_id);
-        $dataRs['user_permission'] = $this->_User_Permission->_view_user_permission($user_id);
+        $dataRs['User_Permission'] = $this->_User_Permission->_view_user_permission($user_id);
         $dataRs['access_map'] = $this->_User_Permission->_view_access_map();
         $dataRs['parent_map'] = $this->_User_Permission->_view_parent_map();
         $this->load->view('User_Permission/Read', $dataRs);

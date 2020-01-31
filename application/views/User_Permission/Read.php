@@ -1,4 +1,4 @@
-<script src="https://unpkg.com/sweetalert/asset_app/sweetalert.min.js"></script>
+<script src="<?= base_url('asset_app/sweetalert/sweetalert.min.js') ?>"></script>
 <div class="col-xs-12 col-sm-9 content">
   <div class="panel panel-default">
     <div class="panel-heading">

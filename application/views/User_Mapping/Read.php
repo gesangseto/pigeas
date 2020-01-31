@@ -8,7 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <!-- SWAL Fire -->
-<script src="https://unpkg.com/sweetalert/asset_app/sweetalert.min.js"></script>
+<script src="<?= base_url('asset_app/sweetalert/sweetalert.min.js') ?>"></script>
 <!-- Body Here -->
 <div class="col-xs-12 col-sm-9 content">
   <div class="panel panel-default">
@@ -98,8 +98,8 @@
                       } ?>
                     </td>
                     <td>
-                      <a href="<?= site_url('User_mapping/Delete') ?>?admin_id=<?= $row['admin_id'] ?>&map_id=<?= $row['access_map_id'] ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                      <a href="<?= site_url('Permission/Read') ?>?id=<?= $row['admin_id'] ?>" class="btn btn-success"><i class="fa fa-search"></i></a>
+                      <a href="<?= site_url('User_Mapping/Delete') ?>?admin_id=<?= $row['admin_id'] ?>&map_id=<?= $row['access_map_id'] ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                      <a href="<?= site_url('User_Permission/Read') ?>?id=<?= $row['admin_id'] ?>" class="btn btn-success"><i class="fa fa-search"></i></a>
                     </td>
                   </tr>
                 <?php
@@ -136,7 +136,7 @@
       })
       .then((willDelete) => {
         if (willDelete) {
-          window.location.href = "<?= site_url('User_mapping/Delete?id_user='); ?>" + uid;
+          window.location.href = "<?= site_url('User_Mapping/Delete?id_user='); ?>" + uid;
         } else {
           swal("User is safe!");
         }

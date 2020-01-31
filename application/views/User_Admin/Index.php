@@ -2,7 +2,7 @@
 <script src="<?= base_url('asset_app/datatables/jquery/jquery-2.2.3.min.js') ?>"></script>
 <script src="<?= base_url('asset_app/datatables/datatables/js/jquery.dataTables.min.js') ?>"></script>
 <!-- SWAL Fire -->
-<script src="https://unpkg.com/sweetalert/asset_app/sweetalert.min.js"></script>
+<script src="<?= base_url('asset_app/sweetalert/sweetalert.min.js') ?>"></script>
 <!-- Body Here -->
 <div class="col-xs-12 col-sm-9 content">
     <div class="panel panel-default">
