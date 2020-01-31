@@ -11,12 +11,12 @@ class User_Permission extends CI_Controller
             redirect(site_url("404"));
         }
         $this->_check_permission();
-        $this->load->model('_User_permission');
+        $this->load->model('_User_Permission');
     }
     public function index()
     {
-        $data['user'] = $this->_User_permission->_view_all_role();
-        $data['all_user'] = $this->_User_permission->_view_all_user();
+        $data['user'] = $this->_User_Permission->_view_all_role();
+        $data['all_user'] = $this->_User_Permission->_view_all_user();
         $this->load->view('User_Permission/Index', $data);
         $this->load->view('Templates/Footer');
     }
@@ -52,26 +52,26 @@ class User_Permission extends CI_Controller
             'update' => $update,
             'delete' => $delete,
         );
-        $check = $this->_User_permission->_check_role($data);
+        $check = $this->_User_Permission->_check_role($data);
         if ($check['status'] == 0) {
             $dataRs = $check;
         } else {
-            $dataRs = $this->_User_permission->_create_permission($data);
+            $dataRs = $this->_User_Permission->_create_permission($data);
         }
-        $dataRs['user_info'] = $this->_User_permission->_view_user($user_id);
-        $dataRs['user_permission'] = $this->_User_permission->_view_user_permission($user_id);
-        $dataRs['access_map'] = $this->_User_permission->_view_access_map();
-        $dataRs['parent_map'] = $this->_User_permission->_view_parent_map();
+        $dataRs['user_info'] = $this->_User_Permission->_view_user($user_id);
+        $dataRs['user_permission'] = $this->_User_Permission->_view_user_permission($user_id);
+        $dataRs['access_map'] = $this->_User_Permission->_view_access_map();
+        $dataRs['parent_map'] = $this->_User_Permission->_view_parent_map();
         $this->load->view('User_Permission/Read', $dataRs);
         $this->load->view('Templates/Footer');
     }
     public function read()
     {
         $id = $this->input->get('id', TRUE);
-        $data['user_info'] = $this->_User_permission->_view_user($id);
-        $data['user_permission'] = $this->_User_permission->_view_user_permission($id);
-        $data['access_map'] = $this->_User_permission->_view_access_map();
-        $data['parent_map'] = $this->_User_permission->_view_parent_map();
+        $data['user_info'] = $this->_User_Permission->_view_user($id);
+        $data['user_permission'] = $this->_User_Permission->_view_user_permission($id);
+        $data['access_map'] = $this->_User_Permission->_view_access_map();
+        $data['parent_map'] = $this->_User_Permission->_view_parent_map();
         $this->load->view('User_Permission/Read', $data);
         $this->load->view('Templates/Footer');
     }
@@ -105,11 +105,11 @@ class User_Permission extends CI_Controller
             'update' => $update,
             'delete' => $delete,
         );
-        $dataRs = $this->_User_permission->_update_role($role_id, $data);
-        $dataRs['user_info'] = $this->_User_permission->_view_user($user_id);
-        $dataRs['user_permission'] = $this->_User_permission->_view_user_permission($user_id);
-        $data['access_map'] = $this->_User_permission->_view_access_map();
-        $data['parent_map'] = $this->_User_permission->_view_parent_map();
+        $dataRs = $this->_User_Permission->_update_role($role_id, $data);
+        $dataRs['user_info'] = $this->_User_Permission->_view_user($user_id);
+        $dataRs['user_permission'] = $this->_User_Permission->_view_user_permission($user_id);
+        $data['access_map'] = $this->_User_Permission->_view_access_map();
+        $data['parent_map'] = $this->_User_Permission->_view_parent_map();
         $this->load->view('User_Permission/Read', $dataRs);
         $this->load->view('Templates/Footer');
         // Here You Code for Update
@@ -123,10 +123,10 @@ class User_Permission extends CI_Controller
             'status' => '1',
             'message' => 'delete success'
         );
-        $dataRs['user_info'] = $this->_User_permission->_view_user($user_id);
-        $dataRs['user_permission'] = $this->_User_permission->_view_user_permission($user_id);
-        $dataRs['access_map'] = $this->_User_permission->_view_access_map();
-        $dataRs['parent_map'] = $this->_User_permission->_view_parent_map();
+        $dataRs['user_info'] = $this->_User_Permission->_view_user($user_id);
+        $dataRs['user_permission'] = $this->_User_Permission->_view_user_permission($user_id);
+        $dataRs['access_map'] = $this->_User_Permission->_view_access_map();
+        $dataRs['parent_map'] = $this->_User_Permission->_view_parent_map();
         $this->load->view('User_Permission/Read', $dataRs);
         $this->load->view('Templates/Footer');
 

@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class _User_permission extends CI_Model
+class _User_Permission extends CI_Model
 {
     public function _view_all_role()
     {
