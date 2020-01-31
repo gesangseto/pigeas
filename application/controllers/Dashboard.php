@@ -14,11 +14,16 @@ class Dashboard extends CI_Controller
         $this->load->model('_BaseRole');
         $header['data'] = $this->_BaseRole->_check_permission();
         $this->load->view('Templates/Header', $header);
+        $this->load->model('_Dashboard');
     }
 
 
     public function index()
     {
+        $data['count_all_notread_cust_message'] = $this->_Dashboard->_count_all_notread_cust_message();
+        $data['count_all_cust_message'] = $this->_Dashboard->_count_all_cust_message();
+
+        $this->load->view('Dashboard/Index', $data);
         $this->load->view('Templates/Footer');
     }
 }

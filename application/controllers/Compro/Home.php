@@ -38,7 +38,8 @@ class Home extends CI_Controller
                 'fullname' => $_POST['fullname'],
                 'email' => $_POST['email'],
                 'phone_number' => $_POST['phone_number'],
-                'message' => $_POST['message']
+                'message' => $_POST['message'],
+                'read_status' => '0'
             );
             $execute =  $this->db->insert('customer_message', $customer_message);
             if ($execute) {

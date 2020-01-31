@@ -104,7 +104,6 @@
 <script src="asset_compro/js/owl.carousel.min.js"></script>
 <script src="asset_compro/js/jquery.nice-select.min.js"></script>
 <script src="asset_compro/js/jquery.circlechart.js"></script>
-<script src="asset_compro/js/mail-script.js"></script>
 <script src="asset_compro/js/main.js"></script>
 </body>
 
