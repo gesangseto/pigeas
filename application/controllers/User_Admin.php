@@ -132,8 +132,8 @@ class User_Admin extends CI_Controller
     public function delete()
     {
         $id = $this->input->get('id', TRUE);
-        $this->db->delete('user_permission', array('admin_id' => $id));
-        $this->db->delete('user_admin', array('id' => $id));
+        $this->db->delete('user_permission', array('admin_id' => $id, 'username !=' => 'gesang'));
+        $this->db->delete('user_admin', array('id' => $id, 'username !=' => 'gesang'));
         echo '<script type="text/javascript"> alert("Success Delete"); history.back(); </script>';
     }
     function hash($string)
